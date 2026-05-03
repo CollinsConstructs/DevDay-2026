@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { AppContext } from '../context/AppContext';
 import { useAuth } from '../context/AuthContext';
 import { logoutUser } from '../firebase/auth';
 

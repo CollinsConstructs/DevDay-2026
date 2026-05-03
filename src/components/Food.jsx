@@ -8,14 +8,12 @@ const INITIAL_CATEGORIES = Object.keys(CATEGORY_PRICES);
 
 const Food = () => {
   const [foods, setFoods] = useState([]);
-  const [isSearching, setIsSearching] = useState(false);
  
  
   const { favorites, toggleFavorite } = useContext(AppContext);
 
   // Fetch initial menu from TheMealDB
   const fetchInitialFoods = async () => {
-    setIsSearching(true);
    
     try {
       const results = await Promise.all(
@@ -36,7 +34,6 @@ const Food = () => {
     } catch (error) {
       console.error('Error fetching initial foods:', error);
     }
-    setIsSearching(false);
   };
 
   useEffect(() => {
